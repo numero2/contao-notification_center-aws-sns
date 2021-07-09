@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<xliff version="1.1">
+<file datatype="php" original="src/Resources/contao/languages/en/default.php" source-language="en" target-language="de">
+<body>
+    <trans-unit id="XPL.aws_sns_sms_type.0.0">
+        <source>Promotional (Advertising)</source>
+        <target>Promotional (Werbung)</target>
+    </trans-unit>
+    <trans-unit id="XPL.aws_sns_sms_type.0.1">
+        <source>SMS messages containing marketing messages should be marked as "Promotional". Amazon SNS ensures that such messages are sent over routes that have reasonable transmission reliability, but are significantly less expensive than the most reliable routes. This allows Amazon SNS to handle your messages in accordance with local laws and regulations.</source>
+        <target>SMS-Nachrichten, die Marketing-Mitteilungen enthalten, sollten als "Promotional" (Werbung) gekennzeichnet werden. Amazon SNS stellt sicher, dass solche Nachrichten über Routen gesendet werden, die eine vertretbare Sendezuverlässigkeit aufweisen, jedoch erheblich kostengünstiger sind als die zuverlässigsten Routen. Auf diese Weise kann Amazon SNS Ihre Nachrichten in Übereinstimmung mit den örtlichen Gesetzen und Bestimmungen handhaben.</target>
+    </trans-unit>
+    <trans-unit id="XPL.aws_sns_sms_type.1.0">
+        <source>Transactional (Business)</source>
+        <target>Transactional (Geschäftlich)</target>
+    </trans-unit>
+    <trans-unit id="XPL.aws_sns_sms_type.1.1">
+        <source>This ensures that messages, for example those containing one-time passwords (OTPs) or PINs, are sent via routes with the greatest dispatch reliability. Outside the U.S., these routes are typically more expensive than sending routes for commercial messages. You should never mark marketing messages as "Business," as this violates regulatory guidelines in certain countries and can get your account flagged as abusive and suspended.</source>
+        <target>Auf diese Weise wird sichergestellt, dass Nachrichten, zum Beispiel solche, die Einmalpasswörter (One-Time Passwords, OTP) oder PINs enthalten, über Routen mit der größten Versandzuverlässigkeit gesendet werden. Außerhalb der USA sind diese Routen in der Regel teurer als Senderouten für Werbenachrichten. Sie sollten Marketing-Nachrichten niemals als "Geschäftlich" kennzeichnen, da dies die behördlichen Richtlinien in bestimmten Ländern verletzt und Ihr Konto als missbräuchlich markiert und gesperrt werden kann.</target>
+    </trans-unit>
+</body>
+</file>
+</xliff>

@@ -1,0 +1,41 @@
+{
+    "name": "numero2/contao-notification_center-aws-sns",
+    "type": "contao-bundle",
+    "description": "Integration of AWS SNS as a notification gateway for Contao 4 with Notification Center",
+    "keywords": ["aws", "contao", "notification_center", "sns", "sms", "gateway"],
+    "license": "LGPL-3.0-or-later",
+    "authors": [{
+            "name": "numero2 - Agentur für digitales Marketing",
+            "homepage": "https://www.numero2.de"
+        }
+    ],
+    "require": {
+        "aws/aws-sdk-php": "^3.92",
+        "contao/core-bundle": "^4.4.0",
+        "terminal42/notification_center": "^1.5"
+    },
+    "require-dev": {
+        "contao/manager-plugin": "^2.0"
+    },
+    "conflict": {
+        "contao/core": "*",
+        "contao/manager-plugin": "<2.0 || >=3.0"
+    },
+    "extra": {
+        "contao-manager-plugin": "numero2\\AwsSnsBundle\\ContaoManager\\Plugin"
+    },
+    "autoload": {
+        "psr-4": {
+            "numero2\\AwsSnsBundle\\": "src/"
+        },
+        "classmap": [
+            "src/Resources/contao/"
+        ],
+        "exclude-from-classmap": [
+            "src/Resources/contao/config/",
+            "src/Resources/contao/dca/",
+            "src/Resources/contao/languages/",
+            "src/Resources/contao/templates/"
+        ]
+    }
+}

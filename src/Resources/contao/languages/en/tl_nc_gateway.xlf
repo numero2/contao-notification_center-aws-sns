@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<xliff version="1.1">
+<file datatype="php" original="src/Resources/contao/languages/en/tl_nc_gateway.php" source-language="en">
+<body>
+    <!-- FIELDS -->
+    <trans-unit id="tl_nc_gateway.type.aws_sns_sms">
+        <source>SMS (Amazon Web Services SNS)</source>
+    </trans-unit>
+    <trans-unit id="tl_nc_gateway.aws_key.0">
+        <source>AWS Access-Key</source>
+    </trans-unit>
+    <trans-unit id="tl_nc_gateway.aws_key.1">
+        <source>Please enter the access key.</source>
+    </trans-unit>
+    <trans-unit id="tl_nc_gateway.aws_secret.0">
+        <source>AWS Secret-Key</source>
+    </trans-unit>
+    <trans-unit id="tl_nc_gateway.aws_secret.1">
+        <source>Please enter the secret key.</source>
+    </trans-unit>
+    <trans-unit id="tl_nc_gateway.aws_region.0">
+        <source>AWS region</source>
+    </trans-unit>
+    <trans-unit id="tl_nc_gateway.aws_region.1">
+        <source>Please select the region.</source>
+    </trans-unit>
+    <!-- OPTIONS -->
+    <trans-unit id="tl_nc_gateway.aws_regions.us-east-2">
+        <source>US East (Ohio) us-east-2</source>
+    </trans-unit>
+    <trans-unit id="tl_nc_gateway.aws_regions.us-east-1">
+        <source>US East (N. Virginia) us-east-1</source>
+    </trans-unit>
+    <trans-unit id="tl_nc_gateway.aws_regions.us-west-1">
+        <source>US West (N. California) us-west-1</source>
+    </trans-unit>
+    <trans-unit id="tl_nc_gateway.aws_regions.us-west-2">
+        <source>US West (Oregon) us-west-2</source>
+    </trans-unit>
+    <trans-unit id="tl_nc_gateway.aws_regions.ap-south-1">
+        <source>Asia Pacific (Mumbai) ap-south-1</source>
+    </trans-unit>
+    <trans-unit id="tl_nc_gateway.aws_regions.ap-southeast-1">
+        <source>Asia Pacific (Singapore) ap-southeast-1</source>
+    </trans-unit>
+    <trans-unit id="tl_nc_gateway.aws_regions.ap-southeast-2">
+        <source>Asia Pacific (Sydney) ap-southeast-2</source>
+    </trans-unit>
+    <trans-unit id="tl_nc_gateway.aws_regions.ap-northeast-1">
+        <source>Asia Pacific (Tokyo) ap-northeast-1</source>
+    </trans-unit>
+    <trans-unit id="tl_nc_gateway.aws_regions.ca-central-1">
+        <source>Canada (Central) ca-central-1</source>
+    </trans-unit>
+    <trans-unit id="tl_nc_gateway.aws_regions.eu-central-1">
+        <source>Europe (Frankfurt) eu-central-1</source>
+    </trans-unit>
+    <trans-unit id="tl_nc_gateway.aws_regions.eu-west-1">
+        <source>Europe (Ireland) eu-west-1</source>
+    </trans-unit>
+    <trans-unit id="tl_nc_gateway.aws_regions.eu-west-2">
+        <source>Europe (London) eu-west-2</source>
+    </trans-unit>
+    <trans-unit id="tl_nc_gateway.aws_regions.eu-west-3">
+        <source>Europe (Paris) eu-west-3</source>
+    </trans-unit>
+    <trans-unit id="tl_nc_gateway.aws_regions.eu-north-1">
+        <source>Europe (Stockholm) eu-north-1</source>
+    </trans-unit>
+    <trans-unit id="tl_nc_gateway.aws_regions.me-south-1">
+        <source>Middle East (Bahrain) me-south-1</source>
+    </trans-unit>
+    <trans-unit id="tl_nc_gateway.aws_regions.sa-east-1">
+        <source>South America (São Paulo) sa-east-1</source>
+    </trans-unit>
+    <trans-unit id="tl_nc_gateway.aws_regions.us-gov-west-1">
+        <source>AWS GovCloud (US-West) us-gov-west-1</source>
+    </trans-unit>
+</body>
+</file>
+</xliff>

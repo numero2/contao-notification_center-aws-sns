@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<xliff version="1.1">
+<file datatype="php" original="src/Resources/contao/languages/en/default.php" source-language="en">
+<body>
+    <trans-unit id="ERR.sns_senderID">
+        <source>The sender ID may be a maximum of 11 characters long and contain only letters and numbers [a-zA-Z0-9]. However, must contain at least one letter.</source>
+    </trans-unit>
+    <trans-unit id="ERR.sns_e164">
+        <source>The recipient number does not match the E.164 format.</source>
+    </trans-unit>
+</body>
+</file>
+</xliff>
