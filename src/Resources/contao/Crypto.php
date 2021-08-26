@@ -80,7 +80,7 @@ class Crypto {
      */
     public function decryptPublic( $strCrypted ) {
 
-        if( $strCrypted === null || $strMessage === '' ) {
+        if( $strCrypted === null || $strCrypted === '' ) {
             return '';
         }
 
