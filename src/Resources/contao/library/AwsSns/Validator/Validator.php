@@ -3,13 +3,13 @@
 /**
  * Contao Open Source CMS
  *
- * Copyright (c) 2005-2021 Leo Feyer
+ * Copyright (c) 2005-2022 Leo Feyer
  *
  * @package   AWS SNS
  * @author    Benny Born <benny.born@numero2.de>
  * @author    Michael Bösherz <michael.boesherz@numero2.de>
  * @license   Commercial
- * @copyright 2021 numero2 - Agentur für digitales Marketing
+ * @copyright 2022 numero2 - Agentur für digitales Marketing
  */
 
 
@@ -26,7 +26,7 @@ class Validator {
      *
      * @return string
      */
-    public function isE164Format( $varValue ): bool {
+    public static function isE164Format( $varValue ): bool {
 
         return (bool)preg_match('/^\+[1-9]\d{1,14}$/', $varValue);
     }
