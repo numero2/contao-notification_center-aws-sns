@@ -31,10 +31,14 @@ How to generate API keys in AWS
 3. Switch to the `IAM` Service
 4. Select `Policies`and choose `Create policy`
 5. Switch to the `JSON` tab and see the example below for a policy which can be used
-6. Save the policy and switch to `Users` and click `Add user`
-4. Choose a user name and set the `Access type` to `Programmatic access`
-8. In the Permissions step choose `Attach existing policies directly` and select the policy you just created
-7. Make sure to save the generated `Access key ID` and the `Secret access key` for later configuration in Contao
+6. Save the policy and switch to `Users` and click `Create user`
+7. In `Permissions options` select `Attach policies directly` and choose the Policy created before
+8. Click `Next` and then `Create user`
+9. Back in the overview of users select the newly created user and switch to the tab `Security credentials`
+10. In the section `Access keys` click the button `Create access key`
+11. Choose the option `Other` and click `Next`, you can skip the `description tag` and choose `Create access key`
+12. Make sure to save the generated `Access key` and the `Secret access key` for later configuration in Contao
+13. Click on `Done` to finish the process
 
 ```json
 {
