@@ -8,6 +8,9 @@
     <trans-unit id="ERR.sns_e164">
         <source>The recipient number does not match the E.164 format.</source>
     </trans-unit>
+    <trans-unit id="ERR.sns_e164_number">
+        <source>The recipient number &quot;%s&quot; does not match the E.164 format.</source>
+    </trans-unit>
 </body>
 </file>
 </xliff>

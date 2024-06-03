@@ -11,8 +11,8 @@
     ],
     "require": {
         "aws/aws-sdk-php": "^3.92",
-        "contao/core-bundle": "^4.4.0",
-        "terminal42/notification_center": "^1.5"
+        "contao/core-bundle": "^4.13.0",
+        "terminal42/notification_center": "^1.7"
     },
     "require-dev": {
         "contao/manager-plugin": "^2.0"

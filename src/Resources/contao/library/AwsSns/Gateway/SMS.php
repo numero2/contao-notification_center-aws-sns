@@ -85,41 +85,55 @@ class SMS extends Base implements GatewayInterface, MessageDraftFactoryInterface
      */
     public function sendDraft( SMSMessageDraft $objDraft ) {
 
-        if( !Validator::isE164Format($objDraft->getRecipientNumber()) ) {
-            System::log(sprintf('Could not send AWS SNS SMS for message ID %s as given number "%s" is not E.164 formatted', $objDraft->getMessage()->id, $objDraft->getRecipientNumber()), __METHOD__, TL_ERROR);
-            return false;
+        $aRecipientNumbers = [];
+        $aRecipientNumbers = explode(',', $objDraft->getRecipientNumber());
+
+        $blnError = false;
+
+        foreach( $aRecipientNumbers as $recipient ) {
+
+            $recipient = trim($recipient);
+
+            if( empty($recipient) ) {
+                continue;
+            }
+            if( !Validator::isE164Format($recipient) ) {
+                System::log(sprintf('Could not send AWS SNS SMS for message ID %s as given number "%s" is not E.164 formatted', $objDraft->getMessage()->id, $recipient), __METHOD__, TL_ERROR);
+                $blnError = true;
+                continue;
+            }
+
+            $messageAttributes = [
+                'AWS.SNS.SMS.SMSType' => ['StringValue' => $objDraft->getSMSType(), 'DataType' => 'String']
+            ];
+
+            if( !empty($objDraft->getSenderName()) ) {
+                $messageAttributes['AWS.SNS.SMS.SenderID'] = ['StringValue' => $objDraft->getSenderName(), 'DataType' => 'String'];
+            }
+
+            try {
+
+                $result = $this->SnSClient->publish([
+                    'Message' => $objDraft->getText(),
+                    'PhoneNumber' => $recipient,
+                    'MessageAttributes' => $messageAttributes
+                ]);
+
+                System::log(sprintf(
+                    'Successfully dispatched message ID %s to AWS SNS, phone: %s, MessageId: %s',
+                    $objDraft->getMessage()->id,
+                    $recipient,
+                    $result->get('MessageId')
+                ), __METHOD__, TL_GENERAL);
+
+            } catch( AwsException $e ) {
+
+                System::log(sprintf('AWS SNS SMS error for message ID %s: %s', $objDraft->getMessage()->id, $e->getMessage()), __METHOD__, TL_ERROR);
+                $blnError = true;
+            }
         }
 
-        $messageAttributes = [
-            'AWS.SNS.SMS.SMSType' => ['StringValue' => $objDraft->getSMSType(), 'DataType' => 'String']
-        ];
-
-        if( !empty($objDraft->getSenderName()) ) {
-            $messageAttributes['AWS.SNS.SMS.SenderID'] = ['StringValue' => $objDraft->getSenderName(), 'DataType' => 'String'];
-        }
-
-        try {
-
-            $result = $this->SnSClient->publish([
-                'Message' => $objDraft->getText(),
-                'PhoneNumber' => $objDraft->getRecipientNumber(),
-                'MessageAttributes' => $messageAttributes
-            ]);
-
-            System::log(sprintf(
-                'Successfully dispatched message ID %s to AWS SNS, phone: %s, MessageId: %s',
-                $objDraft->getMessage()->id,
-                $objDraft->getRecipientNumber(),
-                $result->get('MessageId')
-            ), __METHOD__, TL_GENERAL);
-
-        } catch( AwsException $e ) {
-
-            System::log(sprintf('AWS SNS SMS error for message ID %s: %s', $objDraft->getMessage()->id, $e->getMessage()), __METHOD__, TL_ERROR);
-            return false;
-        }
-
-        return true;
+        return !$blnError;
     }
 
 

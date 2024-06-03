@@ -10,6 +10,10 @@
         <source>The recipient number does not match the E.164 format.</source>
         <target>Die Empfängernummer entspricht nicht dem E.164-Format.</target>
     </trans-unit>
+    <trans-unit id="ERR.sns_e164_number">
+        <source>The recipient number &quot;%s&quot; does not match the E.164 format.</source>
+        <target>Die Empfängernummer &quot;%s&quot; entspricht nicht dem E.164-Format.</target>
+    </trans-unit>
 </body>
 </file>
 </xliff>

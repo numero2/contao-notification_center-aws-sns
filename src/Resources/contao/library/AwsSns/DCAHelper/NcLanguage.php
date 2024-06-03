@@ -17,8 +17,9 @@ namespace numero2\AwsSns\DCAHelper;
 
 use Contao\Backend;
 use Contao\DataContainer;
-use numero2\AwsSns\Validator\Validator;
+use Exception;
 use numero2\AwsSns\Crypto;
+use numero2\AwsSns\Validator\Validator;
 
 
 class NcLanguage extends Backend {
@@ -34,12 +35,26 @@ class NcLanguage extends Backend {
      */
     public function checkE164Format( $varValue, DataContainer $dc ) {
 
+        if( strpos($varValue, ',') ) {
+            $aValues = explode(',', $varValue);
+
+            foreach( $aValues as $value ) {
+                try {
+                    $this->checkE164Format($value, $dc);
+                } catch( Exception $e ) {
+                    throw new Exception(sprintf($GLOBALS['TL_LANG']['ERR']['sns_e164_number'], $value));
+                }
+            }
+
+            return $varValue;
+        }
+
         if( preg_match('/##(.+?)##/', $varValue) ) {
             return $varValue;
         }
 
         if( !Validator::isE164Format($varValue) ) {
-            throw new \Exception($GLOBALS['TL_LANG']['ERR']['sns_e164']);
+            throw new Exception($GLOBALS['TL_LANG']['ERR']['sns_e164']);
         }
 
         return $varValue;
